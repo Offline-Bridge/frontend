@@ -11,7 +11,7 @@ export default function Navbar() {
     return (
         <nav className="w-[93%] mx-auto bg-white/10 backdrop-blur-sm my-5 rounded-[10000px] py-6 px-10 flex items-center justify-between gap-10 font-sfPro " >
 
-            <ul className="w-fit flex items-center justify-evenly gap-5 " >
+            <ul className="w-fit  flex items-center justify-evenly gap-5 " >
                 {
                     navLinks.map((link, index) => (
                         <li
