@@ -1,10 +1,11 @@
 import Image from "next/image";
+import DialPad from "./Dialpad";
 
 
 
 export default function Hero() {
     return (
-        <section className=" w-full h-[140vh] relative  overflow-hidden flex flex-col items-center justify-between gap-20 pt-28 font-sfPro " >
+        <section className=" w-full h-[138vh] relative  overflow-hidden flex flex-col items-center justify-between gap-20 pt-28 font-sfPro " >
 
             <div className=" w-full max-w-4xl  flex flex-col items-center justify-center gap-3 md:gap-2.5 text-center px-4 md:px-0" >
 
@@ -40,7 +41,7 @@ export default function Hero() {
                 style={{
                     background: "radial-gradient(#CAC1FF, #2B25AB , #2B25AB)",
                     boxShadow: `
-      0 0 1000px 160px #2B25AB,
+      0 0 1000px 60px #2B25AB,
       0 0 1000px 60px #2B25AB,
       0 0 1000px 90px #2B25AB
     `,
@@ -49,7 +50,7 @@ export default function Hero() {
                 className="w-[75%] aspect-square rounded-full absolute  bottom-[-4%] md:bottom-[75%] lg:bottom-[-65%] left-[50%] translate-x-[-50%] "
             />
 
-            <Image src={"/images/abstract-images/dialpad.svg"} alt="dialpad" height={1000} width={1000} className=" w-full max-w-60 lg:max-w-77 z-10  " />
+            <DialPad />
         </section>
     )
 }

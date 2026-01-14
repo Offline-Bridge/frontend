@@ -12,6 +12,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-sfPro: var(--font-sfPro);
+  --font-open-sans: var(--font-open-sans);
 }
 
 @media (prefers-color-scheme: dark) {
