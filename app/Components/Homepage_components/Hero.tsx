@@ -5,7 +5,7 @@ import DialPad from "./Dialpad";
 
 export default function Hero() {
     return (
-        <section className=" w-full h-[138vh] relative  overflow-hidden flex flex-col items-center justify-between gap-20 pt-28 font-sfPro " >
+        <section className=" w-full  lg:h-[138vh] relative  overflow-hidden flex flex-col items-center justify-between gap-20 pt-28 font-sfPro " >
 
             <div className=" w-full max-w-4xl  flex flex-col items-center justify-center gap-3 md:gap-2.5 text-center px-4 md:px-0" >
 
@@ -33,10 +33,10 @@ export default function Hero() {
 
 
 
-
-
             <Image src={"/images/abstract-images/wave.svg"} alt="wave" height={1500} width={1500} className=" w-full h-[75%] object-cover object-center absolute bottom-0 left-0   " />
 
+
+            {/* glowing light  */}
             <div
                 style={{
                     background: "radial-gradient(#CAC1FF, #2B25AB , #2B25AB)",
@@ -47,7 +47,7 @@ export default function Hero() {
     `,
                     backdropFilter: "blur(300px)",
                 }}
-                className="w-[75%] aspect-square rounded-full absolute  bottom-[-4%] md:bottom-[75%] lg:bottom-[-65%] left-[50%] translate-x-[-50%] "
+                className="w-[75%] aspect-square rounded-full absolute  bottom-[-15%] md:bottom-[-70%] lg:bottom-[-65%] left-[50%] translate-x-[-50%] "
             />
 
             <DialPad />
