@@ -11,7 +11,7 @@ export default function Navbar() {
     return (
         <nav className="w-[93%] mx-auto bg-white/10 backdrop-blur-sm my-5 rounded-[10000px] py-6 px-10 flex items-center justify-between gap-10 font-sfPro " >
 
-            <ul className="w-fit flex items-center justify-evenly gap-5 " >
+            <ul className="w-fit  flex items-center justify-evenly gap-5 " >
                 {
                     navLinks.map((link, index) => (
                         <li
@@ -26,7 +26,7 @@ export default function Navbar() {
 
 
             <Link href={"/"}>
-                <Image src={"/images/logos/logo.svg"} alt="logo" height={500} width={500} className=" w-50 h-fit " />
+                <Image src={"/images/logos/logo.svg"} alt="logo" height={100} width={500} className=" w-50 h-fit " />
             </Link>
 
 

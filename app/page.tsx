@@ -1,9 +1,10 @@
-import Limitations from "./Components/landing/Limitations";
+import Hero from "./Components/Homepage_components/Hero";
+
 
 export default function Home() {
   return (
-    <div>
-      <Limitations />
-    </div>
+   <>
+   <Hero/>
+   </>
   );
 }
