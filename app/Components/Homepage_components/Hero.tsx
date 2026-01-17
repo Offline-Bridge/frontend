@@ -47,7 +47,7 @@ export default function Hero() {
     `,
                     backdropFilter: "blur(300px)",
                 }}
-                className="w-[75%] aspect-square rounded-full absolute  bottom-[-15%] md:bottom-[-70%] lg:bottom-[-65%] left-[50%] translate-x-[-50%] "
+                className="w-[75%] aspect-square rounded-full absolute  bottom-[-15%] md:bottom-[-70%] lg:bottom-[-65%] left-[50%] translate-x-[-50%] opacity-70 "
             />
 
             <DialPad />
