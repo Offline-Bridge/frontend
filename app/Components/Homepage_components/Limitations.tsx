@@ -31,7 +31,7 @@ const limitations: Limitation[] = [
 
 export default function Limitations() {
   return (
-    <section className="py-20 px-4 bg-[#0A0A0F] font-sfPro ">
+    <section className="py-20 px-4 bg-[#0A0A0F] font-sfPro">
       <div className="text-center max-w-xl mx-auto mb-16">
         <h2 className="text-4xl md:text-6xl font-bold text-[#D6DEED] mb-4">
           Crypto {"Shouldn't"} Be This Hard
