@@ -4,10 +4,10 @@ import Steps from "./Components/Homepage_components/Steps";
 
 export default function Home() {
   return (
-    <>
+    <div >
       <Hero />
       <Limitations />
       <Steps/>
-    </>
+    </div>
   );
 }
