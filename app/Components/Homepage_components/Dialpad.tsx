@@ -79,7 +79,7 @@ export default function DialPad() {
                         onClick={handleDelete}
                         type="button"
                         aria-label="delete"
-                        className=" cursor-pointer hover:text-[#1D3589CC] transition-all duration-100 ease-in-out outline-none " >
+                        className=" cursor-pointer hover:text-[#59638acc] transition-all duration-100 ease-in-out outline-none " >
                         <Delete size={20} />
                     </button>
                 </div>
