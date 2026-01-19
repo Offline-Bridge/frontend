@@ -30,7 +30,7 @@ const features = [
 
 export default function Solution() {
   return (
-    <section className="relative flex flex-col px-6 md:px-10 xl:px-16 py-16 md:py-32 gap-12 md:gap-20 overflow-hidden">
+    <section className="relative flex flex-col px-6 md:px-10 xl:px-16 py-16 md:py-32 gap-12 md:gap-20 overflow-hidden font-sfPro">
       <div className="absolute bg-radial from-[#CAC1FF] via-[#2B25AB] to-[#2B25AB] blur-[100px] w-[75%] h-150 rounded-full top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-60 z-10"></div>
 
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 lg:gap-0 z-20">
