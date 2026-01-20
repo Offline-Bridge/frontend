@@ -1,4 +1,4 @@
-import ConnectWalletPageComponent from "@/app/Components/connect-wallet-page/ConnectWalletPageComponent";
+import ConnectWalletPage from "@/app/Components/connect-wallet-page/ConnectWalletPage";
 
 
 
@@ -6,7 +6,7 @@ import ConnectWalletPageComponent from "@/app/Components/connect-wallet-page/Con
 export default function Page() {
     return (
         <>
-        <ConnectWalletPageComponent/>
+        <ConnectWalletPage/>
         </>
     )
 }
