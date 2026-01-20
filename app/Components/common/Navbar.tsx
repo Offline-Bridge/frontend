@@ -49,54 +49,54 @@ export default function Navbar() {
 
     return (
         <nav className="w-full relative font-sfPro " >
-        <header
-            ref={navRef}
-            className="w-[93%] mx-auto bg-white/10 backdrop-blur-sm my-5 rounded-[10000px] py-6 px-5 lg:px-10 flex items-center justify-between gap-10  z-50  " >
+            <header
+                ref={navRef}
+                className="w-[93%] mx-auto bg-white/10 backdrop-blur-sm my-5 rounded-[10000px] py-6 px-5 lg:px-10 flex items-center justify-between gap-10  z-50  " >
 
-            <ul className="w-fit hidden lg:flex items-center justify-evenly gap-5 " >
-                {
-                    navLinks.map((link, index) => (
-                        <li
-                            key={index}
-                            className="text-base font-medium text-(--medium-gray) hover:text-[#5550D0] transition-all duration-300 ease-in-out "
-                        >
-                            <Link href={link.path} > {link.label} </Link>
-                        </li>
-                    ))
-                }
-            </ul>
-
-
-            <Link href={"/"}>
-                <Image src={"/images/logos/logo.svg"} alt="logo" height={100} width={500} className=" w-50 h-fit " />
-            </Link>
+                <ul className="w-fit hidden lg:flex items-center justify-evenly gap-5 " >
+                    {
+                        navLinks.map((link, index) => (
+                            <li
+                                key={index}
+                                className="text-base font-medium text-(--medium-gray) hover:text-[#5550D0] transition-all duration-300 ease-in-out "
+                            >
+                                <Link href={link.path} > {link.label} </Link>
+                            </li>
+                        ))
+                    }
+                </ul>
 
 
-
-            <div className=" w-fit hidden lg:flex items-center gap-6.25  " >
-                <Button variant="secondary" >  Sign in</Button>
-                <Button variant="primary" className="flex items-center justify-center gap-2.5 " ><Wallet size={17} /> Connect Wallet</Button>
-            </div>
+                <Link href={"/"}>
+                    <Image src={"/images/logos/logo.svg"} alt="logo" height={100} width={500} className=" w-50 h-fit " />
+                </Link>
 
 
 
-            {/*mobile device menu button  */}
-            <button
-                onClick={() => setShowMenu(!showMenu)}
-                className={`size-[26.85px] md:size-10 outline-none rounded-full flex lg:hidden items-center justify-center  relative p-1  group border ${showMenu ? "border-[#FFFFFF40] bg-transparent " : "  bg-[#D6DEED] border-transparent"}   transition-all duration-200 ease-in-out cursor-pointer `} >
-
-                <span className={`w-[60%] p-0.5  rounded-[1px] absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] ${showMenu ? "rotate-45 bg-[#D6DEED]" : "bg-[#000000]"}  cursor-pointer transition-all duration-300 ease-in-out `} />
-                <span className={`w-[60%] p-0.5  rounded-[1px] absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] ${showMenu ? "-rotate-45 bg-[#D6DEED]" : "bg-[#000000]"}  cursor-pointer transition-all duration-300 ease-in-out`} />
-
-            </button>
+                <div className=" w-fit hidden lg:flex items-center gap-6.25  " >
+                    <Button variant="secondary" >  Sign in</Button>
+                    <Link href={"/connect-wallet"} >   <Button variant="primary" className="flex items-center justify-center gap-2.5 " ><Wallet size={17} /> Connect Wallet</Button></Link>
+                </div>
 
 
 
+                {/*mobile device menu button  */}
+                <button
+                    onClick={() => setShowMenu(!showMenu)}
+                    className={`size-[26.85px] md:size-10 outline-none rounded-full flex lg:hidden items-center justify-center  relative p-1  group border ${showMenu ? "border-[#FFFFFF40] bg-transparent " : "  bg-[#D6DEED] border-transparent"}   transition-all duration-200 ease-in-out cursor-pointer `} >
+
+                    <span className={`w-[60%] p-0.5  rounded-[1px] absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] ${showMenu ? "rotate-45 bg-[#D6DEED]" : "bg-[#000000]"}  cursor-pointer transition-all duration-300 ease-in-out `} />
+                    <span className={`w-[60%] p-0.5  rounded-[1px] absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] ${showMenu ? "-rotate-45 bg-[#D6DEED]" : "bg-[#000000]"}  cursor-pointer transition-all duration-300 ease-in-out`} />
+
+                </button>
 
 
-        </header>
 
-         {/* Mobile dropdown menu  */}
+
+
+            </header>
+
+            {/* Mobile dropdown menu  */}
             <div
                 style={{
                     top: `${navbarHeight}px`,
