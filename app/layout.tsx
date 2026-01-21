@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "./Components/common/Navbar";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,16 +18,16 @@ const sfPro = localFont({
     {
       path: "../public/fonts/SFProDisplay-Regular.woff2",
       weight: "400",
-      style: "normal"
+      style: "normal",
     },
   ],
-  variable: "--font-sfPro"
-})
+  variable: "--font-sfPro",
+});
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Offline Bridge",
@@ -45,7 +44,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sfPro.variable} ${openSans} antialiased overflow-x-hidden `}
       >
-        <Navbar />
         {children}
       </body>
     </html>
