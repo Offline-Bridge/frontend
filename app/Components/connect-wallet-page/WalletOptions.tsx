@@ -1,15 +1,22 @@
+import { useAuthStore } from "@/store/auth-store";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 
 export default function WalletOptions() {
+
+    const { currentStep, nextStep, prevStep } = useAuthStore();
+
+
     return (
         <>
             <div className="w-full flex flex-col items-start gap-4 " >
 
 
                 {/* Metamask button  */}
-                <button className="font-sfPro w-full flex items-center justify-between gap-5 bg-[linear-gradient(135deg,rgba(15,23,43,0.65)_0%,rgba(29,41,61,0.65)_100%)]  border-[0.67px] border-[#314158] py-6 px-4 rounded-[14px] cursor-pointer hover:scale-[101%] transition-all duration-300 ease-in-out  " >
+                <button
+                onClick={nextStep}
+                 className="font-sfPro w-full flex items-center justify-between gap-5 bg-[linear-gradient(135deg,rgba(15,23,43,0.65)_0%,rgba(29,41,61,0.65)_100%)]  border-[0.67px] border-[#314158] py-6 px-4 rounded-[14px] cursor-pointer hover:scale-[101%] transition-all duration-300 ease-in-out  " >
 
                     <div className=" flex-3 flex items-center gap-4   " >
                         <div className=" bg-[#F2F8FF] size-13 flex items-center justify-center rounded-[10px]  " >

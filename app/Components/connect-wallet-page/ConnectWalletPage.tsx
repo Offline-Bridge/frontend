@@ -2,14 +2,14 @@
 
 import Image from "next/image";
 import WalletOptions from "./WalletOptions";
-import { useState } from "react";
 import ProfileForm from "./ProfileForm";
 import VerifyPhoneNumber from "./VerifyPhoneNumber";
+import { useAuthStore } from "@/store/auth-store";
 
 
 export default function ConnectWalletPage() {
+    const { currentStep, formValues } = useAuthStore();
 
-    const [currentStep, setCurrentStep] = useState(3) // Change the current step value to either 1, 2, or 3 to view the current step
 
     const stepTitle = (step: number) => {
         switch (step) {
@@ -35,7 +35,7 @@ export default function ConnectWalletPage() {
                 return "Help us personalize your experience";
 
             case 3:
-                return "We sent a code to 08131849363"
+                return `We sent a code to ${formValues.phoneNumber}`
         }
 
     }

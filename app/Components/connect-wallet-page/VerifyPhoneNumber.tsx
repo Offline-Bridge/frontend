@@ -3,6 +3,7 @@
 import { ArrowRight, RefreshCcw } from "lucide-react";
 import { Button } from "../common/Button";
 import React, { useRef, useState } from "react";
+import { useAuthStore } from "@/store/auth-store";
 
 
 
