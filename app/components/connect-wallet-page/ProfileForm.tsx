@@ -1,27 +1,21 @@
 import { ArrowRight, Mail, Phone, User } from "lucide-react";
 import { Button } from "../common/Button";
 import Input from "../common/Input";
-import React, { useState } from "react";
+import React from "react";
+import { useAuthStore } from "@/store/auth-store";
+import { AuthFormType } from "@/types/types";
 
 
 
 
 export default function ProfileForm() {
-
-
-    const [formValues, setFormValues] = useState({
-        firstName: "",
-        lastName: "",
-        emailAddress: "",
-        phoneNumber: "",
-    })
+    const { nextStep, formValues, setFormValues } = useAuthStore();
 
 
 
+    // Function to handle input change
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-
         const { name, value } = e.target
-
 
         if (name === "phoneNumber" && !/^\+?\d*$/.test(value)) {
             return;
@@ -29,13 +23,9 @@ export default function ProfileForm() {
 
         if (name === "phoneNumber" && formValues.phoneNumber.length >= 15) return;
 
-        setFormValues((prev) => ({
-            ...prev,
-            [name]: value
-        }))
-
-
+        setFormValues(name as keyof AuthFormType, value)
     }
+
 
 
 
@@ -97,7 +87,12 @@ export default function ProfileForm() {
 
 
 
-            <Button variant="primary" className="rounded-[10px]! w-full! text-sm py-3 tracking-wider  " > Continue <ArrowRight size={17} /></Button>
+            <Button
+                onClick={nextStep}
+                type="button"
+                variant="primary"
+                className="rounded-[10px]! w-full! text-sm py-3 tracking-wider  " >
+                Continue <ArrowRight size={17} /></Button>
         </form>
     )
 }

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import AppNav from "../components/common/AppNav";
-import Sidebar from "../components/common/Sidebar";
+import Sidebar from "../Components/common/Sidebar";
+import AppNav from "../Components/common/AppNav";
+
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);

@@ -1,4 +1,4 @@
-import Navbar from "../components/common/Navbar";
+
 
 export default function PublicPagesLayout({
   children,
@@ -7,7 +7,6 @@ export default function PublicPagesLayout({
 }) {
   return (
     <>
-      <Navbar />
       {children}
     </>
   );

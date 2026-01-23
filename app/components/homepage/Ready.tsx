@@ -1,5 +1,6 @@
 import { Wallet } from "lucide-react";
 import { Button } from "../common/Button";
+import Link from "next/link";
 
 export default function Ready() {
   return (
@@ -17,12 +18,7 @@ export default function Ready() {
             any phone.
           </p>
         </div>
-        <Button
-          variant="primary"
-          className="flex items-center justify-center gap-2.5 px-10 py-5"
-        >
-          <Wallet size={17} /> Connect Wallet
-        </Button>
+        <Link href={"/connect-wallet"} >   <Button variant="primary" className="flex items-center justify-center gap-2.5 " ><Wallet size={17} /> Connect Wallet</Button></Link>
       </div>
     </section>
   );

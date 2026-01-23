@@ -7,3 +7,12 @@ export interface AlertDataType {
     balance: number;
     time: Date;
 }
+
+
+
+export interface AuthFormType {
+    firstName: string
+    lastName: string
+    phoneNumber: string
+    emailAddress: string
+}
