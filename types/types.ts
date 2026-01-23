@@ -16,3 +16,10 @@ export interface AuthFormType {
     phoneNumber: string
     emailAddress: string
 }
+
+
+export interface txFormType {
+    phoneNumber: string
+    note?: string
+    amount: string
+}

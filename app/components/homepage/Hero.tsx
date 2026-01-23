@@ -3,9 +3,10 @@ import DialPad from "./Dialpad";
 
 
 
+
 export default function Hero() {
     return (
-        <section className=" w-full  lg:h-[138vh] relative  overflow-hidden flex flex-col items-center justify-between gap-20 pt-28 font-sfPro z-0 " >
+        <section className=" w-full  lg:h-[138vh] relative  overflow-hidden flex flex-col items-center justify-between gap-20 pt-14 md:pt-28 font-sfPro z-0 " >
 
             <div className=" w-full max-w-4xl  flex flex-col items-center justify-center gap-3 md:gap-2.5 text-center px-4 md:px-0" >
 

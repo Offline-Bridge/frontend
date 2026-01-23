@@ -48,7 +48,7 @@ export default function Navbar() {
 
 
     return (
-        <nav className="w-full relative font-sfPro " >
+        <nav className="w-full relative font-sfPro  " >
             <header
                 ref={navRef}
                 className="w-[93%] mx-auto bg-white/10 backdrop-blur-sm my-5 rounded-[10000px] py-6 px-5 lg:px-10 flex items-center justify-between gap-10  z-50  " >
@@ -102,7 +102,7 @@ export default function Navbar() {
                     top: `${navbarHeight}px`,
                     height: `calc(100vh - ${navbarHeight}px)`
                 }}
-                className={`absolute left-0 right-0  bg-background lg:hidden overflow-hidden transition-all duration-300 ease-in-out z-50 ${showMenu ? "py-4 translate-x-0 " : "py-4 translate-x-full "} `}
+                className={`fixed left-0 right-0  bg-background lg:hidden overflow-y-auto overflow-x-hidden transition-all duration-300 ease-in-out z-50 ${showMenu ? "py-4 translate-x-0 " : "py-4 translate-x-full "} `}
             >
 
 
@@ -112,14 +112,14 @@ export default function Navbar() {
                 </div>
 
 
-                <ul className={`flex flex-col items-center gap-10 px-6 font-semibold ${showMenu ? " py-5 md:py-10" : "py-0"}`}>
+                <ul className={`flex flex-col items-center gap-10 px-6 font-semibold ${showMenu ? " py-5 md:py-10" : "py-5"}`}>
                     {navLinks.map((link, index) => (
-                        <li key={index} className="w-full pb-3 md:pb-6 text-[#D6DEED]  cursor-pointer text-2xl md:text-4xl font-medium border-b border-[#FFFFFF] hover:text-[#5550D0] transition-all duration-300 ease-in-out " onClick={() => setShowMenu(false)}>
+                        <li key={index} className="w-full pb-3 md:pb-6 text-[#D6DEED]  cursor-pointer text-xl md:text-4xl font-medium border-b border-[#FFFFFF] hover:text-[#5550D0] transition-all duration-300 ease-in-out " onClick={() => setShowMenu(false)}>
                             <Link href={link.path} >{link.label}</Link>
                         </li>
                     ))}
 
-                    <li className="w-full pb-3 md:pb-6 text-[#D6DEED]  cursor-pointer text-2xl md:text-4xl font-medium border-b border-[#FFFFFF] hover:text-[#5550D0] transition-all duration-300 ease-in-out " onClick={() => setShowMenu(false)}>
+                    <li className="w-full pb-3 md:pb-6 text-[#D6DEED]  cursor-pointer text-xl md:text-4xl font-medium border-b border-[#FFFFFF] hover:text-[#5550D0] transition-all duration-300 ease-in-out " onClick={() => setShowMenu(false)}>
                         <Link href="/" >Contact Us</Link>
                     </li>
                 </ul>
