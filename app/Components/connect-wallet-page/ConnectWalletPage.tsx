@@ -60,7 +60,7 @@ export default function ConnectWalletPage() {
     }
 
     return (
-        <div className="w-full min-h-screen h-fit flex items-center justify-center  py-28 px-[5%] font-sfPro " >
+        <div className="w-full min-h-screen h-fit flex items-center justify-center  py-28 px-[5%] font-sfPro relative " >
             <div className=" w-full max-w-2xl flex flex-col items-center justify-center gap-11  " >
 
 

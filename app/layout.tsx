@@ -1,8 +1,11 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./Components/common/Navbar";
-import localFont from 'next/font/local';
+import AppProviders from "./providers/AppProviders";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,16 +22,16 @@ const sfPro = localFont({
     {
       path: "../public/fonts/SFProDisplay-Regular.woff2",
       weight: "400",
-      style: "normal"
+      style: "normal",
     },
   ],
-  variable: "--font-sfPro"
-})
+  variable: "--font-sfPro",
+});
 
 const openSans = Open_Sans({
   variable: "--font-open-sans",
-  subsets: ["latin"]
-})
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Offline Bridge",
@@ -37,16 +40,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${sfPro.variable} ${openSans} antialiased overflow-x-hidden `}
+        className={`${geistSans.variable} ${geistMono.variable} ${sfPro.variable} ${openSans.variable} antialiased overflow-x-hidden`}
       >
-        <Navbar />
-        {children}
+        <AppProviders>
+          <Navbar />
+          {children}
+        </AppProviders>
       </body>
     </html>
   );

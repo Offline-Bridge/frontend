@@ -1,7 +1,7 @@
 import { ArrowRight, Mail, Phone, User } from "lucide-react";
 import { Button } from "../common/Button";
 import Input from "../common/Input";
-import React, { useState } from "react";
+import React from "react";
 import { useAuthStore } from "@/store/auth-store";
 import { AuthFormType } from "@/types/types";
 
@@ -13,11 +13,9 @@ export default function ProfileForm() {
 
 
 
-
+    // Function to handle input change
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-
         const { name, value } = e.target
-
 
         if (name === "phoneNumber" && !/^\+?\d*$/.test(value)) {
             return;
@@ -29,7 +27,6 @@ export default function ProfileForm() {
     }
 
 
-    console.log(formValues)
 
 
 
