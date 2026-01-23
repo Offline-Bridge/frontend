@@ -14,11 +14,13 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn, shallowNavigate } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 interface NavItem {
   label: string;
   href: string;
+  isModal?: boolean;
   icon: LucideIcon;
 }
 
@@ -42,6 +44,7 @@ const navItems: NavItem[] = [
     label: "Send Money",
     href: "/send-money",
     icon: Send,
+    isModal: true,
   },
   {
     label: "Receive Money",
@@ -65,6 +68,7 @@ export default function Sidebar({
   onCloseMobileSidebar,
 }: SidebarProps) {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const pathname = usePathname();
 
   return (
     <aside
@@ -129,21 +133,65 @@ export default function Sidebar({
         )}
 
         <nav className="flex-1 p-3 space-y-1">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="flex items-center gap-3 px-3 py-3 rounded-lg text-gray-400 hover:bg-gray-800/50 hover:text-white transition-all group"
-              title={isCollapsed ? item.label : undefined}
-            >
-              <span className="shrink-0">
-                <item.icon className="w-5 h-5" />
-              </span>
-              {!isCollapsed && (
-                <span className="text-sm font-medium">{item.label}</span>
-              )}
-            </Link>
-          ))}
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <div
+                key={item.href}
+                className={cn(
+                  "relative rounded-xl transition-all",
+                  isActive
+                    ? "p-px bg-linear-to-r from-white/30 via-white/50 to-white/30"
+                    : "",
+                )}
+                style={
+                  isActive
+                    ? {
+                        filter: "drop-shadow(0 0 6px rgba(255, 255, 255, 0.2))",
+                      }
+                    : undefined
+                }
+              >
+                {item.isModal ? (
+                  <button
+                    className={cn(
+                      "flex items-center gap-3 px-3 py-3 rounded-xl transition-all group relative w-full cursor-pointer",
+                      isActive
+                        ? "text-white bg-[#0F1018]"
+                        : "text-gray-400 bg-transparent hover:bg-gray-800/50 hover:text-white",
+                    )}
+                    title={isCollapsed ? item.label : undefined}
+                    onClick={() => shallowNavigate(item.href)}
+                  >
+                    <span className="shrink-0">
+                      <item.icon className="w-5 h-5" />
+                    </span>
+                    {!isCollapsed && (
+                      <span className="text-sm font-medium">{item.label}</span>
+                    )}
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "flex items-center gap-3 px-3 py-3 rounded-xl transition-all group relative",
+                      isActive
+                        ? "text-white bg-[#0F1018]"
+                        : "text-gray-400 bg-transparent hover:bg-gray-800/50 hover:text-white",
+                    )}
+                    title={isCollapsed ? item.label : undefined}
+                  >
+                    <span className="shrink-0">
+                      <item.icon className="w-5 h-5" />
+                    </span>
+                    {!isCollapsed && (
+                      <span className="text-sm font-medium">{item.label}</span>
+                    )}
+                  </Link>
+                )}
+              </div>
+            );
+          })}
         </nav>
       </div>
     </aside>

@@ -1,3 +1,5 @@
+"use client";
+
 import BalanceOverview from "@/app/components/dashboard/BalanceOverview";
 import CopyUssd from "@/app/components/dashboard/CopyUssd";
 import Metrics from "@/app/components/dashboard/Metrics";

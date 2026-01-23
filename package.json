@@ -9,16 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@metamask/sdk": "^0.33.1",
     "@wagmi/connectors": "^7.1.2",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "tailwind-merge": "^3.4.0",
     "viem": "^2.44.4",
     "wagmi": "^3.3.4",
-    "zustand": "^5.0.10",
-    "tailwind-merge": "^3.4.0"
+    "zustand": "^5.0.10"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

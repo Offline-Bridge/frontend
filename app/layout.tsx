@@ -1,11 +1,8 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Open_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./Components/common/Navbar";
 import AppProviders from "./providers/AppProviders";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,10 +45,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sfPro.variable} ${openSans.variable} antialiased overflow-x-hidden`}
       >
-        <AppProviders>
-          <Navbar />
-          {children}
-        </AppProviders>
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );
