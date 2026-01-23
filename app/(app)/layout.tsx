@@ -3,13 +3,14 @@
 import { useState } from "react";
 import Sidebar from "../Components/common/Sidebar";
 import AppNav from "../Components/common/AppNav";
+import SendMoneyModal from "../Components/dashboard/SendMoneyModal";
 
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
   return (
-    <main className="font-sfPro bg-[#0A0A0F] flex h-screen xl:overflow-hidden">
+    <main className="font-sfPro bg-[#0A0A0F] flex h-screen xl:overflow-hidden relative ">
       <Sidebar
         isMobileSidebarOpen={isMobileSidebarOpen}
         onCloseMobileSidebar={() => setIsMobileSidebarOpen(false)}
@@ -27,6 +28,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           onClick={() => setIsMobileSidebarOpen(false)}
         />
       )}
+      <SendMoneyModal/>
     </main>
   );
 }
