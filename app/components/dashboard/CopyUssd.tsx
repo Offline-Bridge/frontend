@@ -24,7 +24,7 @@ export default function CopyUssd() {
     <div className="bg-linear-to-br from-[#1D293D1A] from-15% via-[#0F1018] via-10% to-[#155DFC1A] to-50% rounded-2xl p-6 md:p-8 border border-[#1D293D33]">
       <div className="bg-[#0a0a0f]/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 mb-8 flex items-center justify-between">
         <div>
-          <h3 className="bg-linear-to-b from-[#155DFC] to-[#827AF2] bg-clip-text text-transparent text-4xl md:text-5xl font-bold mb-2">
+          <h3 className="bg-linear-to-b from-[#155DFC] to-[#827AF2] bg-clip-text text-transparent text-xl md:text-2xl font-bold mb-2">
             {ussdCode}
           </h3>
           <p className="text-gray-400 text-lg">USSD Code</p>
